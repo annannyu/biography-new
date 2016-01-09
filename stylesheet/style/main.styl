@@ -1,0 +1,449 @@
+//---------mixin---------//
+opacity(n)
+	-webkit-opacity n
+  -mos-opacity n
+  -ms-opacity n
+  opacity n
+//---------mixin---------//
+//---------base style---------//
+body
+	background-color #e5e5e5
+a
+	text-decoration none
+	display block
+	color white
+	&:hover
+		text-decoration none
+ul,li
+	list-style none
+//---------base style---------//	
+//---------layout-style---------//
+.cube-main-part
+	padding 0% 10%
+//---------layout-style---------//
+//---------modules---------//
+.myButton
+	-moz-box-shadow inset 0px 1px 0px 0px #fce2c1
+	-webkit-box-shadow inset 0px 1px 0px 0px #fce2c1
+	box-shadow inset 0px 1px 0px 0px #fce2c1
+	background -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25))
+	background -moz-linear-gradient(top, #ffc477 5%, #fb9e25 100%)
+	background -webkit-linear-gradient(top, #ffc477 5%, #fb9e25 100%)
+	background -o-linear-gradient(top, #ffc477 5%, #fb9e25 100%)
+	background -ms-linear-gradient(top, #ffc477 5%, #fb9e25 100%)
+	background linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%)
+	background-color #ffc477
+	-moz-border-radius 6px
+	-webkit-border-radius 6px
+	border-radius 6px
+	border 1px solid #eeb44f
+	display none
+	cursor pointer
+	color #ffffff
+	font-family Arial
+	font-size 15px
+	font-weight bold
+	padding 8px 28px
+	text-decoration none
+	text-shadow 0px 1px 0px #cc9f52
+	&:hover
+		background -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477))
+		background -moz-linear-gradient(top, #fb9e25 5%, #ffc477 100%)
+		background -webkit-linear-gradient(top, #fb9e25 5%, #ffc477 100%)
+		background -o-linear-gradient(top, #fb9e25 5%, #ffc477 100%)
+		background -ms-linear-gradient(top, #fb9e25 5%, #ffc477 100%)
+		background linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%)
+		background-color #fb9e25
+	&:active
+		position relative
+		top 1px
+button
+	-moz-box-shadow inset 0px 1px 0px 0px #fbafe3
+	-webkit-box-shadow inset 0px 1px 0px 0px #fbafe3
+	box-shadow inset 0px 1px 0px 0px #fbafe3
+	background -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ff5bb0), color-stop(1, #ef027d) )
+	background -moz-linear-gradient( center top, #ff5bb0 5%, #ef027d 100% )
+	background-color #ff5bb0
+	-webkit-border-top-left-radius 10px
+	-moz-border-top-left-radius 10px
+	border-top-left-radius 10px
+	-webkit-border-top-right-radius 10px
+	-moz-border-radius-topright 10px
+	border-top-right-radius 10px
+	-webkit-border-bottom-right-radius 10px
+	-moz-border-radius-bottomright 10px
+	border-bottom-right-radius 10px
+	-webkit-border-bottom-left-radius 10px
+	-moz-border-radius-bottomleft 10px
+	border-bottom-left-radius 10px
+	text-indent 0px
+	border 1px solid #ee1eb5
+	display inline-block
+	color #ffffff
+	font-family Arial Black
+	font-weight bold
+	font-style normal
+	text-decoration none
+	text-align center
+	text-shadow 2px 4px 0px #c70067
+	&:hover 
+		background -moz-linear-gradient( center top, #ef027d 5%, #ff5bb0 100% )
+		background-color #ef027d
+		margin-top 3px
+.triangle-button
+	width 0 
+	height 0 
+	border-left 85px solid transparent
+	border-right 85px solid transparent
+	border-bottom 150px solid gray
+.circle-button
+	border-radius 100%
+.cube
+	height 33vh
+	text-align center
+.cube-gray
+	background #3f3f3f
+.cube-black
+	background black
+	padding 7% 0
+.cube-white
+	background #f3f3f3
+//---------modules---------//
+//---------State Rules---------//
+@keyframes mymove {
+  60% {
+    opacity(0.6)
+  }
+  100% {
+    opacity(1)
+  }
+}
+
+@keyframes leftFall {
+	10% {
+	  opacity(1)
+    transform rotate(10deg)
+    margin-top 10%
+    margin-right 1%
+  }
+  100% {
+  	opacity(0)
+    transform rotate(28deg)
+    margin-top 110%
+    margin-right 5%
+  }
+}
+@keyframes rightFall {
+	10% {
+    opacity(1)
+    transform rotate(-10deg)
+    margin-top 10%
+  }
+  100% {
+  	opacity(0)
+    transform rotate(-28deg)
+    margin-top 110%
+  }
+}
+.is-front-page-letter-leftFall-1s
+	animation leftFall 2s ease
+.is-front-page-letter-leftFall-2s
+	animation leftFall 2s ease
+.is-front-page-letter-leftFall-3s
+	animation leftFall 3s ease
+.is-front-page-letter-leftFall-3s
+	animation leftFall 3s ease
+.is-front-page-letter-leftFall-4s
+	animation leftFall 4s ease
+.is-front-page-letter-leftFall-5s
+	animation leftFall 5s ease
+.is-front-page-letter-rightFall-3s
+	animation rightFall 3s ease
+.is-front-page-letter-rightFall-4s
+	animation rightFall 4s ease
+.is-front-page-letter-rightFall-5s
+	animation rightFall 5s ease
+.is-front-page-letter-rightFall-6s
+	animation rightFall 6s ease
+.is-front-page-letter-rightFall-7s
+	animation rightFall 7s ease
+.is-front-page-letter-rightFall-8s
+	animation rightFall 8s ease
+.is-hide
+	display none
+//---------State Rules---------//
+//---------front-page---------//
+#front-main-part
+	width 100%
+	height 100vh
+	position relative
+.front-page
+	width 50%
+	height 100vh
+	.front-page-h1
+		font-size 55px
+		width 100%
+		position absolute
+		font-family monospace
+	.black-h1
+		text-align right
+		color white
+	.white-h1		
+		text-align left 
+		color black
+	.character-y
+		top 8%
+	.character-ch
+		top 16%
+	.character-a
+		top 24%
+	.character-pers
+		top 32%
+	.character-w
+		top 40%
+	.character-si
+		top 48%
+	.character-u
+		top 12%
+	.character-e
+		top 20%
+	.character-n
+		top 28%
+	.character-onal
+		top 36%
+	.character-eb
+		top 44%
+	.character-te
+		top 52%
+.black-side
+	background-color black
+	position relative
+	float left
+	.black-side-content
+		margin-top 14%
+.white-side
+	background-color white	
+	position relative
+	float right
+	.white-side-content
+		margin-top 20%
+.front-page-button
+	position absolute
+	width 10%
+	height 6%
+	left 45%
+	top 85%
+	animation mymove 2s infinite
+	.front-page-button-content
+		width 100%
+		height 100%
+//---------front-page---------//
+//---------main-page---------//
+.container
+	position absolute
+	top 0.5%
+	left 10%
+.cube-image
+	height 95%
+	padding 3% 0 0 0 
+	img
+		width 100%
+		height 100%
+.col-md-4
+	h1
+		color white
+		line-height 150%
+		a
+			transition 1s
+			&:hover
+				color orange
+				transform scale(1.1)
+			
+	p 
+		color #999
+		font-family cardo
+		font-size 15px
+		vertical-align middle
+//---------main-page---------//
+//---------travel-page---------//
+.second-page
+	position absolute
+	width 100%
+	top 0%
+	right -100%
+	perspective 1100px
+	overflow hidden
+	background rgba(63, 157, 195, 0.42)
+	background url("../../images/3d.jpg") no-repeat
+	.airplane
+		background url("../../images/airplane.png") no-repeat
+		width 256px
+		height 256px
+		position absolute
+		left 52%
+		top 0%
+		transform rotatex(30deg)
+		background-size 27%
+		z-index 3
+		display none
+	.plane
+		background url("../../images/plane.png") no-repeat
+		width 100%
+		height 100%
+		position absolute
+		left 52%
+		top 0%
+		background-size 6%
+		z-index 3
+		display none
+	.second-page-text
+		position absolute
+		top 8%
+		left 26%
+		font-size 43px
+		color black
+		font-family serif
+		text-shadow 2px 2px 0px gray
+	.second-page-logo
+		background url("../../images/logo.png") no-repeat
+		width 159px
+		height 162px
+		transform scale(0.6)
+		position absolute
+		top -1%
+		left 15%  
+	.map-arrow
+		background url("../../images/map-arrow.png") no-repeat
+		position absolute
+		background-size 60%
+		transform rotatex(35deg)
+		width 502px
+		height 520px
+		top 0%
+		left 40%
+		.map-arrow-text
+			transform rotateX(55deg)
+			color white
+			top 7%
+			position absolute
+			left 20%
+			width 150px
+		.new-york
+			position absolute
+			left 1%
+			top 32px
+		.las-vegas
+			position absolute
+			left -42px
+			top 210px
+	.second-page-images
+		width 100%
+		height 100vh
+		background url("../../images/us-map.png")
+		background-size cover
+		background-size contain
+		background-repeat no-repeat
+		background-position 85% 0%
+		background-color #000
+		transform rotatex(60deg)
+		box-shadow 0px 5px 10px #2B2B2B
+	.spot
+		position absolute
+		top 30%
+		left 16%
+		transition transform 1s
+		transform rotatex(-20deg)
+		h6 
+			width 100px
+			margin-left 50px
+			color black
+			margin-top 40px
+			cursor pointer
+			&:hover
+				color rgba(255, 0, 0, 0.72)
+	.second-page-spot-three
+		top 43%
+		left 22%
+		background url("../../images/spot-icon-1.png") no-repeat
+		background-size 36%
+		.three-text
+			&:hover
+				padding-top 2px
+	.second-page-spot-five
+		top 40%
+		left 74.5%
+		background url("../../images/spot-icon-1.png") no-repeat
+		background-size 36%
+//---------travel-page---------//
+//---------parallax-page---------//
+.main-content
+	overflow hidden
+	position absolute
+	width 100%
+	top 100%
+	.background
+		background url("../../images/road-back.jpg") no-repeat
+		background-size 130% 100%
+		width 100%
+		height 105vh
+		position relative
+		.car-front
+			position absolute
+			width 31px
+			top 64%
+			left 45%
+		.carback
+			position absolute
+			top 64%
+			left 42.5%
+	.fade-in
+		background-color black
+		width 100%
+		height 100vh
+		position absolute
+		top 0%
+		opacity 0
+		display none
+#roadtrip
+	.roadtrip-title
+		position absolute
+		top 30%
+		left 35%
+		text-shadow 2px 2px 2px black 
+		text-align center
+		.roadtrip-text
+			color white
+			font-family serif
+		h1
+			font-size 60px
+		p
+			font-size 30px
+			margin-top 30px
+			margin-bottom 30px
+//---------parallax-page---------//
+//---------photo-shoot---------//
+#selector
+	width 100%
+	height 100vh
+	position absolute
+	left -101%
+	.album
+		width 100px
+		height 100px
+		background-color gray
+		.slide
+			width 100%
+			height 50px
+			background-color orange
+.shot
+	width 150px
+	height 150px
+	overflow hidden
+	position relative
+	border 8px solid black
+//---------photo-shoot---------//
+	
+
+
+
+	
