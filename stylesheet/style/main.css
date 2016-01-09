@@ -457,6 +457,8 @@ button:hover {
   width: 100px;
   height: 100px;
   background-color: #808080;
+  position: absolute;
+  z-index: 999;
 }
 #selector .album .slide {
   width: 100%;
