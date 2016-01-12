@@ -27,9 +27,10 @@ $(document).ready(function(){
   	},600);
   });
   $(".surf-page").on('click',function(){
+  	$(".surfing").show(100);
   	$(".surfing").animate({
   		'top':'0%'
-  	},600);
+  	},100);
   	$(".main-content").animate({
   		'top':'100%'
   	},600);

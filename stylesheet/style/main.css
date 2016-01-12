@@ -528,6 +528,7 @@ button:hover {
   height: 100vh;
   top: -102%;
   background: #d30215;
+  display: none;
 }
 @import url("http://fonts.googleapis.com/css?family=PassionOne");
 .bg {
