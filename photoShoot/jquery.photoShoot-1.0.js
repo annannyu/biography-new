@@ -62,7 +62,7 @@
 						height		:	settings.stage.height+'px'
 				}).appendTo(main);
 			}
-			
+			console.log(settings.stage.width);
 			var overlay = $('<div class="overlay">').css({opacity:1-settings.opacity}).appendTo(main);
 	
 			if(navigator.userAgent.indexOf('Chrome')!=-1)
@@ -85,8 +85,6 @@
 			var n_left, n_top;
 			
 			main.mousemove(function(e){
-				console.log('e.pageX:'+e.pageX);
-				console.log('offSet-left:'+offSet.left);
 				n_left = (e.pageX-offSet.left)-settings.viewFinder.width/2;
 				n_top = (e.pageY-offSet.top)-settings.viewFinder.height/2;
 		

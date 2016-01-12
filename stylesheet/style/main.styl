@@ -171,6 +171,22 @@ button
 	animation rightFall 8s ease
 .is-hide
 	display none
+.is-trigger-button
+	display block
+	width 300px
+	height 70px
+	position absolute
+	left 41%
+	top 37%
+	background rgba(39, 157, 143, 0.87)
+	border-radius 20px
+	text-align center
+	font-size 25px
+	font-weight 700
+	text-decoration none
+	line-height 65px
+	&:hover
+		color black
 //---------State Rules---------//
 //---------front-page---------//
 #front-main-part
@@ -427,23 +443,331 @@ button
 	height 100vh
 	position absolute
 	left -101%
+	padding 0
 	.album
 		width 100px
 		height 100px
-		background-color gray
 		position absolute
 		z-index 999
 		.slide
 			width 100%
 			height 50px
-			background-color orange
 .shot
-	width 150px
-	height 150px
+	width 300px
+	height 200px
 	overflow hidden
 	position relative
 	border 8px solid black
+.remind-word
+	text-align center
+	font-size 36px
+	position absolute
+	z-index 1000
+	color black
+	font-family monospace
+.word-1
+	top 2%
+	left 34%
+.word-2
+	top 7%
+	left 39%
+.trigger
+	position absolute
+	width 300px
+	height 200px 
+	top 30%
+	left 16%
+	z-index 10000
+.congratulations
+	font-size 30px
+	position absolute
+	left 10%
+	color #FFFFFF
+	top 10%
+	font-family monospace
 //---------photo-shoot---------//
+//---------surf---------//
+.surfing
+	font-family 'Passion One', impact
+	position absolute
+	width 100%
+	height 100vh
+	top -102%
+	background #d30215
+@import url(http://fonts.googleapis.com/css?family=Passion+One);
+.bg 
+	position absolute
+	width 100%
+	height 100vh
+	top 0%
+	background url("../../images/silver-surfer.jpg")
+	background-size 2000px auto
+	animation fade 6s steps(30) forwards
+#retrigger--1 
+	&:checked 
+		& ~ .bg 
+			animation-name	fade--1
+		& ~ .pane 
+			.rotate 
+				animation-name rotate--1
+			.logo 
+				animation-name hide--1
+				&:nth-child(1) 
+					animation-name change--1
+		& ~ .buttons 
+			animation-name buttons--1
+			.button--2 
+				display block
+#retrigger--2 
+	&:checked 
+		& ~ .bg 
+			animation-name fade--2
+		& ~ .pane 
+			.rotate 
+				animation-name rotate--2
+			.logo 
+				animation-name hide--2
+				&:nth-child(1) 
+					animation-name change--2
+		& ~ .buttons 
+			animation-name buttons--2
+			.button--1 
+				display block
+				
+@-webkit-keyframes fade--1 { 
+		0% {
+			background-position 0 0
+			opacity 1
+		}
+		50% {
+			background-position 4000% 4000%
+			opacity 0.6
+		}
+		100% {
+			background-position: -4000% -4000%;
+			opacity: 0;
+		}
+}
+@-webkit-keyframes fade--2 { 
+		0% {
+			background-position 0 0
+			opacity 1
+		}
+		50% {
+			background-position 4000% 4000%
+			opacity 0.6
+		}
+		100% {
+			background-position: -4000% -4000%;
+			opacity: 0;
+		}
+}
+@-webkit-keyframes	rotate--1 { 
+		0% {
+			-webkit-transform translate(-50%, -50%) rotate3d(1, -1, 0, 40deg) scale(2)
+			transform translate(-50%, -50%) rotate3d(1, -1, 0, 40deg) scale(2)
+		}
+		50% {
+			transform translate(-50%, -50%)	rotate3d(0,-0,0,0deg)	scale(1.1)
+		}
+		100% {
+			transform translate(-50%, -50%)	rotate3d(0,-0,0,0deg)	scale(1)
+		}
+}
+@-webkit-keyframes	rotate--2 { 
+		0% {
+			-webkit-transform translate(-50%, -50%) rotate3d(1, -1, 0, 40deg) scale(2)
+			transform translate(-50%, -50%) rotate3d(1, -1, 0, 40deg) scale(2)
+		}
+		50% {
+			transform translate(-50%, -50%)	rotate3d(0,-0,0,0deg)	scale(1.1)
+		}
+		100% {
+			transform translate(-50%, -50%)	rotate3d(0,-0,0,0deg)	scale(1)
+		}
+}
+@-webkit-keyframes hide--1 { 
+		0% {
+			visibility visible
+			opacity 1
+		}
+		100% {
+			visibility hidden
+			opacity 0
+		}
+}
+@-webkit-keyframes hide--2 { 
+		0% {
+			visibility visible
+			opacity 1
+		}
+		100% {
+			visibility hidden
+			opacity 0
+		}
+}
+@-webkit-keyframes	buttons--1 { 
+		0%,99% {
+			visibility hidden
+		}
+		100% {
+			visibility visible
+		}
+}
+@-webkit-keyframes	buttons--2 { 
+		0%,99% {
+			visibility hidden
+		}
+		100% {
+			visibility visible
+		}
+}
+@keyframes change--1 {
+		0% {
+			background-position 0 0
+			color rgba(150,150,0,0.4)
+			drop-shadow( 0  -1px 0 black)
+			drop-shadow( 0   1px 0 black)
+			drop-shadow( 1px 0   0 black)
+			drop-shadow(-1px 0   0 black)
+      border-color black
+    }
+		50% {
+			background-position 200% 200%
+			color rgba(150,150,0,0.4)
+			drop-shadow( 0  -1px 0 black)
+			drop-shadow( 0   1px 0 black)
+			drop-shadow( 1px 0   0 black)
+			drop-shadow(-1px 0   0 black)
+			border-color white
+
+		}
+		100% {
+			background-position -200% -200%
+			color white
+			drop-shadow( 0 0 0 white)
+			drop-shadow( 0 0 0 white)
+			drop-shadow( 0 0 0 white)
+			drop-shadow( 0 0 0 white)
+			border-color white
+    }
+}
+@keyframes change--2 {
+		0% {
+			background-position 0 0
+			color rgba(150,150,0,0.4)
+      border-color black
+    }
+		50% {
+			background-position 200% 200%
+			color rgba(150,150,0,0.4)
+			border-color white
+
+		}
+		100% {
+			background-position -200% -200%
+			color white
+			border-color white
+    }
+}
+	.pane 
+		position absolute
+		top 50%
+		left 50%
+		transform translate(-50%, -50%) scaleY(1.3)
+		perspective 700px
+	.logo 
+		position absolute
+		top 50%
+		left 50%
+		transform-style preserve-3d
+		transform translate(-50%, -50%)
+		font-size 9em
+		letter-spacing -0.06em
+		animation hide 8s linear forwards
+		padding 0 0.2em
+		line-height 1
+		border 0.02em solid black
+	.retrigger 
+		position absolute
+		left -5em
+		opacity 0
+	.buttons 
+		position absolute
+		z-index 3
+		top 1em
+		left 50%
+		width 10em
+		margin-left -5em
+		height 2em
+		line-height 2em
+		text-align center
+		cursor pointer
+		user-select none
+		animation button 8s linear
+.rotate 
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%, -50%) rotate3d(1, -1, 0, 40deg) scale(2)
+	transform-style preserve-3d
+	animation rotate 6s 2s forwards
+.logo 
+	&:nth-child(1) 
+		animation change--2 8s steps(30) forwards
+		background url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/28359/marvel.jpg")
+		background-size 2000px auto
+		color transparent
+	&:nth-child(2) 
+		transform translate3d(-50%, -50%, -2px)
+	&:nth-child(3) 
+		transform translate3d(-50%, -50%, -3px)
+	&:nth-child(4) 
+		transform translate3d(-50%, -50%, -4px)
+	&:nth-child(5) 
+		transform translate3d(-50%, -50%, -5px)
+	&:nth-child(6) 
+		transform translate3d(-50%, -50%, -6px)
+	&:nth-child(7) 
+		transform translate3d(-50%, -50%, -7px)
+	&:nth-child(8) 
+		transform translate3d(-50%, -50%, -8px)
+	&:nth-child(9) 
+		transform translate3d(-50%, -50%, -9px)
+	&:nth-child(10) 
+		transform translate3d(-50%, -50%, -10px)
+	&:nth-child(11) 
+		transform translate3d(-50%, -50%, -11px)
+	&:nth-child(12) 
+		transform translate3d(-50%, -50%, -12px)
+	&:nth-child(13) 
+		transform translate3d(-50%, -50%, -13px)
+	&:nth-child(14) 
+		transform translate3d(-50%, -50%, -14px)
+	&:nth-child(15) 
+		transform translate3d(-50%, -50%, -15px)
+	&:nth-child(16) 
+		transform translate3d(-50%, -50%, -16px)
+	&:nth-child(17) 
+		transform translate3d(-50%, -50%, -17px)
+	&:nth-child(18) 
+		transform translate3d(-50%, -50%, -18px)
+	&:nth-child(19) 
+		transform translate3d(-50%, -50%, -19px)
+	&:nth-child(20) 
+		transform translate3d(-50%, -50%, -20px)
+.buttons 
+	.button 
+		padding 0.3em 1em
+		color black
+		font-size 1.3em
+		display none
+		cursor pointer
+		border 2px solid black
+		&:hover 
+			color white
+			background black
+//---------surf---------//
 	
 
 

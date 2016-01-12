@@ -26,6 +26,19 @@ $(document).ready(function(){
   		'left':'-100%'
   	},600);
   });
+  $(".surf-page").on('click',function(){
+  	$(".surfing").animate({
+  		'top':'0%'
+  	},600);
+  	$(".main-content").animate({
+  		'top':'100%'
+  	},600);
+  	$(".container").animate({
+  		'top':'200%'
+  	},600).promise().done(function(){
+  		// code here
+  	});
+  });
   $(".parallax").on('click',function(){
   	$(".main-content").animate({
   		'top':'0%'
@@ -50,8 +63,6 @@ $(document).ready(function(){
 				opacity	: 0.8,
 				onClick	: shoot
 			}
-
-
 			main.photoShoot(config)
   	});
   });
@@ -60,17 +71,22 @@ $(document).ready(function(){
   $(window).scroll(function(){
   	var position = $(this).scrollTop();
   	$('.car-front').css({top:535+position*10,left:641-position*10,'transform':'scale('+(parseFloat(position/1.4+1))+')'});
-  	console.log(position/10+1);
   	$('.carback').css({top:515-position*11.7,left:605-position*17.1,'transform':'scale('+(parseFloat(1-position/55.8))+')'});
 	});
   //--parallax-car--//
   //--photo-shoot--//
   var main =$("#selector");
- //  var bg = new Array(						 
-	// 						{ url:'http://farm4.static.flickr.com/3595/3405361333_77f2a5e731_b.jpg', size:{x:1024,y:677}}				
-	// );
-  
 	$('<div class="album">').html('<div class="slide" />').appendTo(main);
+	// trigger click end the game
+	function success(){
+		$("#selector").hide().promise().done(function(){
+			$('<h1 class="congratulations">CONGRATULATIONS!!Good Photographer Need Patience And You Got It</h1>').appendTo($("#front-main-part"));
+			$('<a href="index.html" class="is-trigger-button">Back-To-Main-Page</a>').appendTo($("#front-main-part"));
+			$(".white-side").css('background','url("images/wally.jpg")');
+		});
+	}
+	$(".trigger").on('click',success);
+	// trigger click end the game 
 	function shoot(position){
 		// This function is called by the plug-in when the button is pressed
 		
@@ -79,17 +95,20 @@ $(document).ready(function(){
 		
 		// The flash will last for 100 milliseconds (a tenth of the second):
 		setTimeout(function(){main.find('.overlay').css('background-color','')},100);
-		
 		// Creating a new shot image:
 		var newShot = $('<div class="shot">');
 		var img = $('<img src=images/car2.jpg>');
-		newShot.append( $('<img src=images/find.jpg>').width(img.size.x/2).height(img.size.y/2).css('margin',-position.top*0.5+'px 0 0 -'+position.left*0.5+'px') );
+		newShot.append( $('<img src=images/find.jpg>').css('margin',-position.top+'px 0 0 -'+position.left+'px') );
 		$(".slide").append(newShot);
-		console.log(main.size.x);
+		$('.shot').eq(3).remove();
 		// Adding the newly created shot to the album div, but moved 160px to the right.
 		// We start an animation to slide it in view:
 		
 		newShot.css('margin-right',-160).prependTo('.album .slide').animate({marginRight:0},'slow');	
 	}
   //--photo-shoot--//
+  //--surf--//
+  // make some waves.
+
+  //--surf--//
 });
