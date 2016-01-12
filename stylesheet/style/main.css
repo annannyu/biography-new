@@ -3,6 +3,7 @@
 opacity n,
 body {
   background-color: #e5e5e5;
+  overflow: hidden;
 }
 a {
   text-decoration: none;
@@ -20,6 +21,7 @@ li {
   padding: 0% 10%;
 }
 .myButton {
+  text-align: center;
   -moz-box-shadow: inset 0px 1px 0px 0px #fce2c1;
   -webkit-box-shadow: inset 0px 1px 0px 0px #fce2c1;
   box-shadow: inset 0px 1px 0px 0px #fce2c1;
@@ -52,6 +54,7 @@ li {
   background: -ms-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
   background: linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
   background-color: #fb9e25;
+  text-decoration: none;
 }
 .myButton:active {
   position: relative;
@@ -91,16 +94,6 @@ button:hover {
   background: -moz-linear-gradient(center top, #ef027d 5%, #ff5bb0 100%);
   background-color: #ef027d;
   margin-top: 3px;
-}
-.triangle-button {
-  width: 0;
-  height: 0;
-  border-left: 85px solid transparent;
-  border-right: 85px solid transparent;
-  border-bottom: 150px solid #808080;
-}
-.circle-button {
-  border-radius: 100%;
 }
 .cube {
   height: 33vh;
@@ -413,6 +406,20 @@ button:hover {
   background: url("../../images/spot-icon-1.png") no-repeat;
   background-size: 36%;
 }
+.travel-button {
+  position: absolute;
+  display: block;
+  top: 10%;
+  left: 70%;
+  width: 220px;
+  height: 50px;
+  line-height: 32px;
+  font-size: 17px;
+  border-radius: 5px;
+}
+.travel-button:hover {
+  color: #000;
+}
 .main-content {
   overflow: hidden;
   position: absolute;
@@ -464,6 +471,29 @@ button:hover {
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+.parallax-home {
+  top: 52%;
+  left: 40%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  box-shadow: inset 0px 1px 0px 0px #fce2c1;
+  background: linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+  background-color: #ffc477;
+  border-radius: 6px;
+  border: 1px solid #eeb44f;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 28px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #cc9f52;
+}
+.parallax-home:hover {
+  color: #000;
 }
 #selector {
   width: 100%;
@@ -527,7 +557,7 @@ button:hover {
   width: 100%;
   height: 100vh;
   top: -102%;
-  background: #d30215;
+  background: #02bdd3;
   display: none;
 }
 @import url("http://fonts.googleapis.com/css?family=PassionOne");
@@ -678,7 +708,7 @@ button:hover {
   transform-style: preserve-3d;
   transform: translate(-50%, -50%);
   font-size: 9em;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   animation: hide 8s linear forwards;
   padding: 0 0.2em;
   line-height: 1;
@@ -712,7 +742,7 @@ button:hover {
   animation: rotate 6s 2s forwards;
 }
 .logo:nth-child(1) {
-  animation: change--2 8s steps(30) forwards;
+  animation: change 10s steps(30) forwards;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/28359/marvel.jpg");
   background-size: 2000px auto;
   color: transparent;
@@ -937,6 +967,7 @@ button:hover {
     background-position: -200% -200%;
     color: #fff;
     border-color: #fff;
+    background: #02bdd3;
   }
 }
 @-webkit-keyframes change--1 {
@@ -954,6 +985,7 @@ button:hover {
     background-position: -200% -200%;
     color: #fff;
     border-color: #fff;
+    background: #02bdd3;
   }
 }
 @-o-keyframes change--1 {
@@ -971,6 +1003,7 @@ button:hover {
     background-position: -200% -200%;
     color: #fff;
     border-color: #fff;
+    background: #02bdd3;
   }
 }
 @keyframes change--1 {
@@ -988,6 +1021,7 @@ button:hover {
     background-position: -200% -200%;
     color: #fff;
     border-color: #fff;
+    background: #02bdd3;
   }
 }
 @-moz-keyframes change--2 {
@@ -1005,6 +1039,7 @@ button:hover {
     background-position: -200% -200%;
     color: #fff;
     border-color: #fff;
+    background: #02bdd3;
   }
 }
 @-webkit-keyframes change--2 {
@@ -1022,6 +1057,7 @@ button:hover {
     background-position: -200% -200%;
     color: #fff;
     border-color: #fff;
+    background: #02bdd3;
   }
 }
 @-o-keyframes change--2 {
@@ -1039,6 +1075,7 @@ button:hover {
     background-position: -200% -200%;
     color: #fff;
     border-color: #fff;
+    background: #02bdd3;
   }
 }
 @keyframes change--2 {
@@ -1056,5 +1093,6 @@ button:hover {
     background-position: -200% -200%;
     color: #fff;
     border-color: #fff;
+    background: #02bdd3;
   }
 }

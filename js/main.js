@@ -40,7 +40,9 @@ $(document).ready(function(){
   		// code here
   	});
   });
+// mover to parallax page
   $(".parallax").on('click',function(){
+  	$("body").css('overflow','scroll');
   	$(".main-content").animate({
   		'top':'0%'
   	},600);
@@ -48,7 +50,21 @@ $(document).ready(function(){
   		'top':'-100%'
   	},600);
   });
+// mover to parallax page
+// mover from parallax page to main page
+  	$(".parallax-home").on('click',function(){
+  	$("body").css('overflow','hidden');
+  	$(".container").animate({
+  		'top':'0%'
+  	},600);
+  	$(".main-content").animate({
+  		'top':'100%'
+  	},600);
+  });
+// mover from parallax page to main page
+// move to photography page
   $(".photography").on('click',function(){
+  	// $("#front-main-part").css('left','0%');
   	$(".second-page").animate({
   		'right':'-200%'
   	},600);
@@ -67,6 +83,20 @@ $(document).ready(function(){
 			main.photoShoot(config)
   	});
   });
+// move to photography page
+// move from photography page to main page
+$(".is-trigger-button").on('click',function(){
+  	$("#front-main-part").animate({
+  		'left':'-100%'
+  	},600)
+  	$(".container").animate({
+  		'left':'9%'
+  	},600);
+  	$(".second-page").animate({
+  		'right':'-100%'
+  	},600);
+});
+// move from photography page to main page
   //--travel-trigger--//
   //--parallax-car--//
   $(window).scroll(function(){
@@ -82,7 +112,7 @@ $(document).ready(function(){
 	function success(){
 		$("#selector").hide().promise().done(function(){
 			$('<h1 class="congratulations">CONGRATULATIONS!!Good Photographer Need Patience And You Got It</h1>').appendTo($("#front-main-part"));
-			$('<a href="index.html" class="is-trigger-button">Back-To-Main-Page</a>').appendTo($("#front-main-part"));
+			$('<a class="is-trigger-button">Back-To-Main-Page</a>').appendTo($("#front-main-part"));
 			$(".white-side").css('background','url("images/wally.jpg")');
 		});
 	}
