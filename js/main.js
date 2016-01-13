@@ -90,6 +90,7 @@ $(document).ready(function(){
 // move to photography page
   $(".photography").on('click',function(){
   	// $("#front-main-part").css('left','0%');
+  	$("#selector").show(100);
   	$(".second-page").animate({
   		'right':'-200%'
   	},600);
@@ -111,15 +112,15 @@ $(document).ready(function(){
 // move to photography page
 // move from photography page to main page
 function photoBackHome(){
-  	$(".white-side").animate({
-  		'left':'-100%'
-  	},600);
-  	$(".container").animate({
-  		'left':'9%'
-  	},600);
-  	$(".second-page").animate({
-  		'right':'-100%'
-  	},600);
+	$("#front-main-part").animate({
+		'left':'-100%'
+	},600);
+	$(".container").animate({
+		'left':'9%'
+	},600);
+	$(".second-page").animate({
+		'right':'-100%'
+	},600);
 };
 // move from photography page to main page
   //--travel-trigger--//
@@ -137,8 +138,10 @@ function photoBackHome(){
 	function success(){
 		$("#selector").hide().promise().done(function(){
 			$('<h1 class="congratulations">CONGRATULATIONS!!Good Photographer Need Patience And You Got It</h1>').appendTo($("#front-main-part"));
-			$('<a class="is-trigger-button">Back-To-Main-Page</a>').appendTo($("#front-main-part"));
+			// $('<a class="is-trigger-button">Back-To-Main-Page</a>').appendTo($("#front-main-part"));
 			$(".white-side").css('background','url("images/wally.jpg")');
+			$(".is-trigger-button").fadeIn();
+			$("#front-main-part").css('left','0');
 		});
 	}
 	$(".trigger").on('click',success);
