@@ -20,6 +20,74 @@ li {
 .cube-main-part {
   padding: 0% 10%;
 }
+.surf-home {
+  top: 46.5%;
+  left: 75%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  box-shadow: inset 0px 1px 0px 0px #fce2c1;
+  border: 1px solid #fff;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 35px;
+  font-weight: bold;
+  padding: 5px 25px;
+  text-decoration: none;
+  font-weight: 900;
+  font-family: monospace;
+  display: none;
+}
+.parallax-home {
+  top: 52%;
+  left: 40%;
+  position: absolute;
+  display: block;
+  text-align: center;
+  box-shadow: inset 0px 1px 0px 0px #fce2c1;
+  background: linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+  background-color: #ffc477;
+  border-radius: 6px;
+  border: 1px solid #eeb44f;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 28px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #cc9f52;
+}
+.parallax-home:hover {
+  color: #000;
+}
+.travel-home {
+  position: absolute;
+  display: block;
+  top: 10%;
+  left: 70%;
+  width: 220px;
+  height: 50px;
+  line-height: 32px;
+  font-size: 17px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: inset 0px 1px 0px 0px #fce2c1;
+  background: linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+  background-color: #ffc477;
+  border: 1px solid #eeb44f;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-weight: bold;
+  padding: 8px 28px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #cc9f52;
+}
+.travel-home:hover {
+  color: #000;
+}
 .myButton {
   text-align: center;
   -moz-box-shadow: inset 0px 1px 0px 0px #fce2c1;
@@ -406,20 +474,6 @@ button:hover {
   background: url("../../images/spot-icon-1.png") no-repeat;
   background-size: 36%;
 }
-.travel-button {
-  position: absolute;
-  display: block;
-  top: 10%;
-  left: 70%;
-  width: 220px;
-  height: 50px;
-  line-height: 32px;
-  font-size: 17px;
-  border-radius: 5px;
-}
-.travel-button:hover {
-  color: #000;
-}
 .main-content {
   overflow: hidden;
   position: absolute;
@@ -471,29 +525,6 @@ button:hover {
   font-size: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
-}
-.parallax-home {
-  top: 52%;
-  left: 40%;
-  position: absolute;
-  display: block;
-  text-align: center;
-  box-shadow: inset 0px 1px 0px 0px #fce2c1;
-  background: linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
-  background-color: #ffc477;
-  border-radius: 6px;
-  border: 1px solid #eeb44f;
-  cursor: pointer;
-  color: #fff;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 8px 28px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #cc9f52;
-}
-.parallax-home:hover {
-  color: #000;
 }
 #selector {
   width: 100%;
@@ -816,6 +847,41 @@ button:hover {
   color: #fff;
   background: #000;
 }
+.surfing-logo {
+  cursor: pointer;
+}
+.surf-pic img {
+  height: 22vh;
+  transform: rotate(45deg);
+  transition: 0.7s;
+  display: none;
+}
+.surf-pic img:hover {
+  transform: rotate(0deg) scale(1.3);
+  position: absolute;
+  z-index: 1000;
+}
+.surf-bottom-images {
+  position: absolute;
+  bottom: 0;
+}
+.surf-word {
+  position: absolute;
+  top: 45%;
+  left: 4.8%;
+  text-align: center;
+  display: none;
+  color: rgba(255,255,255,0.5);
+}
+.surf-word h2 {
+  font-size: 40px;
+}
+.surf-page,
+.travel,
+.photography,
+.parallax {
+  animation: mymove 1s infinite;
+}
 @-moz-keyframes mymove {
   60% {
     -webkit-opacity: 0.6;
@@ -843,6 +909,42 @@ button:hover {
 @keyframes mymove {
   60% {
     -webkit-opacity: 0.6;
+  }
+  100% {
+    -webkit-opacity: 1;
+  }
+}
+@-moz-keyframes mymove--2 {
+  60% {
+    -webkit-opacity: 0.3;
+    color: #ffa500;
+  }
+  100% {
+    -webkit-opacity: 1;
+  }
+}
+@-webkit-keyframes mymove--2 {
+  60% {
+    -webkit-opacity: 0.3;
+    color: #ffa500;
+  }
+  100% {
+    -webkit-opacity: 1;
+  }
+}
+@-o-keyframes mymove--2 {
+  60% {
+    -webkit-opacity: 0.3;
+    color: #ffa500;
+  }
+  100% {
+    -webkit-opacity: 1;
+  }
+}
+@keyframes mymove--2 {
+  60% {
+    -webkit-opacity: 0.3;
+    color: #ffa500;
   }
   100% {
     -webkit-opacity: 1;

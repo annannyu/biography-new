@@ -17,7 +17,7 @@ $(document).ready(function(){
 			});
 		});
 	});
-  //--travel-trigger--//
+  // move to travel page
   $(".travel").on('click',function(){
   	$(".second-page").animate({
   		'right':'0%'
@@ -26,6 +26,18 @@ $(document).ready(function(){
   		'left':'-100%'
   	},600);
   });
+  // move to travel page
+  // move from travel page to main page
+  $(".travel-home").on('click',function(){
+  	$(".second-page").animate({
+  		'right':'-100%'
+  	},600);
+  	$(".container").animate({
+  		'left':'10%'
+  	},600);
+  });
+  // move to travel page to main page
+  // move to surf page
   $(".surf-page").on('click',function(){
   	$(".surfing").show(100);
   	$(".surfing").animate({
@@ -36,10 +48,23 @@ $(document).ready(function(){
   	},600);
   	$(".container").animate({
   		'top':'200%'
-  	},600).promise().done(function(){
-  		// code here
-  	});
+  	},600);
   });
+  // move to surf page
+  // move from surf page to main page
+  $(".surf-home").on('click',function(){
+  	$(".surf-pic img").hide();
+  	$(".surfing").animate({
+  		'top':'-100%'
+  	},600);
+  	$(".main-content").animate({
+  		'top':'100%'
+  	},600);
+  	$(".container").animate({
+  		'top':'0%'
+  	},600);
+  });
+  // move from surf page to main page
 // mover to parallax page
   $(".parallax").on('click',function(){
   	$("body").css('overflow','scroll');
@@ -85,17 +110,17 @@ $(document).ready(function(){
   });
 // move to photography page
 // move from photography page to main page
-$(".is-trigger-button").on('click',function(){
-  	$("#front-main-part").animate({
+function photoBackHome(){
+  	$(".white-side").animate({
   		'left':'-100%'
-  	},600)
+  	},600);
   	$(".container").animate({
   		'left':'9%'
   	},600);
   	$(".second-page").animate({
   		'right':'-100%'
   	},600);
-});
+};
 // move from photography page to main page
   //--travel-trigger--//
   //--parallax-car--//
@@ -117,6 +142,7 @@ $(".is-trigger-button").on('click',function(){
 		});
 	}
 	$(".trigger").on('click',success);
+	$(".is-trigger-button").on('click',photoBackHome);
 	// trigger click end the game 
 	function shoot(position){
 		// This function is called by the plug-in when the button is pressed
@@ -139,7 +165,16 @@ $(".is-trigger-button").on('click',function(){
 	}
   //--photo-shoot--//
   //--surf--//
-  // make some waves.
-
+  function showSurfPic(){
+  	$(".surfing-logo").css('transform','translate(-50%, -50%) scale(0.5)');
+  	$(".buttons").hide();
+  	$(".bg").hide();
+  	$(".surf-word").fadeIn(800);
+  	$(".surf-home").fadeIn(800);
+  	$(".surf-pic img").each(function(index){
+				$(this).delay(100*index).fadeIn(1000);
+			});
+  }
+  $(".surfing-logo").on('click',showSurfPic);
   //--surf--//
 });
