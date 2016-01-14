@@ -20,6 +20,29 @@ li {
 .cube-main-part {
   padding: 0% 10%;
 }
+.selector-button {
+  cursor: pointer;
+  position: absolute;
+  left: 77%;
+  top: 6%;
+  text-align: center;
+  line-height: 50px;
+  z-index: 100;
+  transform: rotatez(10deg);
+}
+.selector-button img {
+  width: 45%;
+}
+.selector-button p {
+  color: #000;
+  font-size: 22px;
+  position: absolute;
+  top: 14%;
+  left: 40%;
+}
+.selector-button p:hover {
+  color: #fff;
+}
 .surf-home {
   top: 46.5%;
   left: 75%;
@@ -327,7 +350,7 @@ button:hover {
 .container {
   position: absolute;
   top: 0.5%;
-  left: 10%;
+  width: 100%;
 }
 .cube-image {
   height: 95%;
@@ -563,11 +586,11 @@ button:hover {
 }
 .word-1 {
   top: 2%;
-  left: 34%;
+  left: 30%;
 }
 .word-2 {
   top: 7%;
-  left: 39%;
+  left: 35%;
 }
 .trigger {
   position: absolute;
@@ -584,6 +607,7 @@ button:hover {
   color: #fff;
   top: 10%;
   font-family: monospace;
+  text-shadow: 2px 3px 5px #000;
 }
 .surfing {
   font-family: 'Passion One', impact;
@@ -879,11 +903,18 @@ button:hover {
 .surf-word h2 {
   font-size: 40px;
 }
+.logo-button {
+  box-shadow: 2px 2px 30px;
+}
+.logo-button:hover {
+  border: 1px solid #000;
+}
 .surf-page,
 .travel,
 .photography,
 .parallax {
   animation: mymove 1s infinite;
+  text-shadow: 2px 2px 30px;
 }
 @-moz-keyframes mymove {
   60% {

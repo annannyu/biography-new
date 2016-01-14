@@ -20,21 +20,27 @@ $(document).ready(function(){
   // move to travel page
   $(".travel").on('click',function(){
   	$(".second-page").animate({
-  		'right':'0%'
+  		'left':'0%'
   	},600);
   	$(".container").animate({
   		'left':'-100%'
   	},600);
+  	$("#selector").animate({
+  		'left':'-200%'
+  	},600)
   });
   // move to travel page
   // move from travel page to main page
   $(".travel-home").on('click',function(){
   	$(".second-page").animate({
-  		'right':'-100%'
+  		'left':'100%'
   	},600);
   	$(".container").animate({
-  		'left':'10%'
+  		'left':'0%'
   	},600);
+  	$("#selector").animate({
+  		'left':'-102%'
+  	},600)
   });
   // move to travel page to main page
   // move to surf page
@@ -90,12 +96,12 @@ $(document).ready(function(){
 // move to photography page
   $(".photography").on('click',function(){
   	// $("#front-main-part").css('left','0%');
-  	$("#selector").show(100);
+  	$("#selector").fadeIn(100);
   	$(".second-page").animate({
-  		'right':'-200%'
+  		'left':'200%'
   	},600);
   	$(".container").animate({
-  		'left':'109%'
+  		'left':'100%'
   	},600);
   	$("#selector").animate({
   		'left':'0%'
@@ -116,10 +122,21 @@ function photoBackHome(){
 		'left':'-100%'
 	},600);
 	$(".container").animate({
-		'left':'9%'
+		'left':'0%'
 	},600);
 	$(".second-page").animate({
 		'right':'-100%'
+	},600);
+};
+function photoFindBackHome(){
+	$(".second-page").animate({
+		'left':'100%'
+	},600);
+	$(".container").animate({
+		'left':'0%'
+	},600);
+	$("#selector").animate({
+		'left':'-100%'
 	},600);
 };
 // move from photography page to main page
@@ -146,6 +163,7 @@ function photoBackHome(){
 	}
 	$(".trigger").on('click',success);
 	$(".is-trigger-button").on('click',photoBackHome);
+	$(".selector-button").on('click',photoFindBackHome);
 	// trigger click end the game 
 	function shoot(position){
 		// This function is called by the plug-in when the button is pressed
